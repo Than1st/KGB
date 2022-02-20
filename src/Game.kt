@@ -18,13 +18,17 @@ class Game{
             newGame(nama)
         } else {
             userChoice = userChoice.capitalize()
+            var checker = false
             for (u in choice){
-                if (userChoice != u){
-                    println("$userChoice\nJawaban tidak sesuai dengan peraturan permainan!")
-                    newGame(nama)
+                if (userChoice == u){
+                    checker = true
+                    break
                 }
             }
-
+            if (!checker){
+                println("Jawaban tidak sesuai dengan peraturan permainan!")
+                newGame(nama)
+            }
         }
         println("CPU choice : $cpuChoice")
         println("Result :")

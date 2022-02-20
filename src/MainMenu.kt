@@ -1,3 +1,5 @@
+import kotlin.system.exitProcess
+
 var user = mutableListOf<String>()
 var pass = mutableListOf<String>()
 fun main() {
@@ -12,8 +14,10 @@ class MainMenu {
             ==========================
             1. Registration
             2. Login
+            3. Registered Account
+            4. Exit Game
             
-            Pilih Menu (1/2) : 
+            Pilih Menu (1/2/3/4) : 
         """.trimIndent())
         when (readLine()!!) {
             "1" -> {
@@ -24,6 +28,9 @@ class MainMenu {
             }
             "3" -> {
                 cekAkun()
+            }
+            "4" -> {
+                exitProcess(0)
             }
             else -> {
                 pilihMenu()
