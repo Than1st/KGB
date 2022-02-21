@@ -1,3 +1,3 @@
 # KGB
- Paper, Rock, Scissor Terminal Version
+ Paper, Rock, Scissor Terminal Version <br>
  Game Kertas Gunting Batu
