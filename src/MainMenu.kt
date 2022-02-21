@@ -2,8 +2,10 @@ import kotlin.system.exitProcess
 
 var user = mutableListOf<String>()
 var pass = mutableListOf<String>()
+var akun = arrayListOf<Account>()
 fun main() {
     MainMenu().pilihMenu()
+    
 }
 class MainMenu {
     fun pilihMenu(){
@@ -32,7 +34,29 @@ class MainMenu {
             "4" -> {
                 exitProcess(0)
             }
+            "5" -> {
+                for (acc in akun){
+                    println("Username : ${acc.user} | Password : ${acc.pass}")
+                }
+                pilihMenu()
+            }
+            "6" -> {
+                print("Username : ")
+                var u = readLine().toString()
+                print("Password : ")
+                var p = readLine().toString()
+
+                if (u.isNotEmpty() && p.isNotEmpty()){
+                    akun.add(Account(u, p))
+                    println("Berhasil Tambah Account!")
+                    pilihMenu()
+                } else {
+                    println("Form Tidak Boleh Kosong!")
+                    pilihMenu()
+                }
+            }
             else -> {
+                println("Invalid Input Choice!")
                 pilihMenu()
             }
         }
